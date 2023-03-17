@@ -22,4 +22,10 @@ public class EmployeeRestController {
                                           @PageableDefault(size = 3) Pageable pageable) {
         return employeeService.findAllByNameContaining(pageable, search);
     }
+
+    @ResponseStatus(HttpStatus.OK)
+    @DeleteMapping("/{id}")
+    public void deleteEmployee(@PathVariable int id) {
+        employeeService.delete(employeeService.findById(id));
+    }
 }

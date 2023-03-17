@@ -11,7 +11,7 @@ public interface IEmployeeService {
 //
 //    void edit(EmployeeDTO employeeDTO);
 //
-//    void delete(EmployeeDTO employeeDTO);
-//
-//    EmployeeDTO findById(int id);
+    void delete(EmployeeDTO employeeDTO);
+
+    EmployeeDTO findById(int id);
 }
