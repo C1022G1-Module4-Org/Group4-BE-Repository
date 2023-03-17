@@ -1,13 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="34c81a55-497e-45dd-8f5f-4e60728c922d" name="Changes" comment="" />
+    <list default="true" id="34c81a55-497e-45dd-8f5f-4e60728c922d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/controller/coffee_shop/BranchRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/dto/coffee_shop/BranchDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/model/coffee_shop/Branch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/coffee_shop/IBranchRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/IBranchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/impl/BranchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/controller/coffee_shop/CoffeeShopRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/controller/coffee_shop/CoffeeShopRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/dto/coffee_shop/CoffeeShopDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/dto/coffee_shop/CoffeeShopDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/dto/product/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/dto/product/ProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/model/coffee_shop/CoffeeShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/model/coffee_shop/CoffeeShop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/coffee_shop/ICoffeeShopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/coffee_shop/ICoffeeShopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/employee/IEmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/employee/IEmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/ICoffeeShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/ICoffeeShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/impl/CoffeeShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/impl/CoffeeShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/cs_module">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -17,16 +73,41 @@
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
-    <option name="showScratchesAndConsoles" value="false" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelOrder2": "2",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RequestMappingsPanelWidth2": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/the_cup_coffe/Group4-BE-Repository",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="CsModuleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="cs_module.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.cs_module.CsModuleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -36,10 +117,38 @@
       <option name="presentableId" value="Default" />
       <updated>1678865205536</updated>
       <workItem from="1678865206601" duration="49000" />
+      <workItem from="1679018750003" duration="12217000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/impl/BranchService.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/controller/coffee_shop/BranchRestController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
