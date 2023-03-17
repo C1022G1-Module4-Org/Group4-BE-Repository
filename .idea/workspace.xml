@@ -1,13 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="34c81a55-497e-45dd-8f5f-4e60728c922d" name="Changes" comment="" />
+    <list default="true" id="34c81a55-497e-45dd-8f5f-4e60728c922d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/dto/customer/CustomerTypeDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/model/customer/CustomerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/customer/ICustomerTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/customer/ICustomerTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/customer/impl/CustomerTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/controller/customer/CustomerRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/controller/customer/CustomerRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/dto/customer/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/dto/customer/CustomerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/model/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/model/customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/customer/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/customer/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/customer/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/customer/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/customer/impl/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/customer/impl/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/cs_module">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -17,16 +61,43 @@
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
-    <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../customer/cs_customer_mod_4" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodeGym\C1022G1-TranBaTai-Module4\case_study_module_4\Group4-BE-Repository\cs_module\src\main\java\com\example\cs_module\dto\customer" />
+      <recent name="D:\CodeGym\C1022G1-TranBaTai-Module4\case_study_module_4\Group4-BE-Repository\cs_module\src\main\java\com\example\cs_module\service\customer" />
+      <recent name="D:\CodeGym\C1022G1-TranBaTai-Module4\case_study_module_4\Group4-BE-Repository\cs_module\src\main\java\com\example\cs_module\service\customer\impl" />
+      <recent name="D:\CodeGym\C1022G1-TranBaTai-Module4\case_study_module_4\Group4-BE-Repository\cs_module\src\main\java\com\example\cs_module\repository\customer" />
+      <recent name="D:\CodeGym\C1022G1-TranBaTai-Module4\case_study_module_4\Group4-BE-Repository\cs_module\src\main\java\com\example\cs_module\model\customer" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.cs_module.controller.customer" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="CsModuleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="cs_module.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.cs_module.CsModuleApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -36,10 +107,25 @@
       <option name="presentableId" value="Default" />
       <updated>1678865205536</updated>
       <workItem from="1678865206601" duration="49000" />
+      <workItem from="1678955628491" duration="661000" />
+      <workItem from="1678957786010" duration="181000" />
+      <workItem from="1678958697334" duration="707000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
