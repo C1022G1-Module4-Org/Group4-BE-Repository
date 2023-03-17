@@ -34,7 +34,22 @@ public class EmployeeService implements IEmployeeService {
             BeanUtils.copyProperties(employee, employeeDTO);
             list.add(employeeDTO);
         }
-        return new PageImpl<>(list, pageable, employees.getTotalElements()  );
+        return new PageImpl<>(list, pageable, employees.getTotalElements());
+    }
+
+    @Override
+    public void delete(EmployeeDTO employeeDTO) {
+        employeeRepository.deleteById(employeeDTO.getId());
+    }
+
+    @Override
+    public EmployeeDTO findById(int id) {
+        EmployeeDTO employeeDTO = new EmployeeDTO();
+        Employee employee = employeeRepository.findById(id).get();
+        employeeDTO.setPositionDTO(new PositionDTO());
+        BeanUtils.copyProperties(employee.getPosition(), employeeDTO.getPositionDTO());
+        BeanUtils.copyProperties(employee, employeeDTO);
+        return employeeDTO;
     }
 
 //    @Override
