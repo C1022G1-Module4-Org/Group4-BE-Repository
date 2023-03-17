@@ -3,6 +3,7 @@ package com.example.cs_module.service.product.impl;
 import com.example.cs_module.dto.product.ProductDTO;
 import com.example.cs_module.dto.product.ProductTypeDTO;
 import com.example.cs_module.model.product.Product;
+import com.example.cs_module.model.product.ProductType;
 import com.example.cs_module.repository.product.IProductRepository;
 import com.example.cs_module.repository.product.IProductTypeRepository;
 import com.example.cs_module.service.product.IProductService;
@@ -60,7 +61,11 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void update(ProductDTO productDTO) {
-
+    public void update(ProductDTO productDTO, int id) {
+        Product product = productRepository.findById(id).get();
+        product.setProductType(new ProductType());
+        BeanUtils.copyProperties(productDTO.getProductTypeDTO(), product.getProductType());
+        BeanUtils.copyProperties(productDTO, product);
+        productRepository.save(product);
     }
 }
