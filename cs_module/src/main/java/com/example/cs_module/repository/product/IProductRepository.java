@@ -1,4 +1,5 @@
 package com.example.cs_module.repository.product;
+
 import com.example.cs_module.model.product.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
