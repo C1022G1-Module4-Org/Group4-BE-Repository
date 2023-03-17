@@ -1,7 +1,10 @@
 package com.example.cs_module.controller.product;
 
 import com.example.cs_module.dto.product.ProductDTO;
+import com.example.cs_module.dto.product.ProductTypeDTO;
+import com.example.cs_module.model.product.Product;
 import com.example.cs_module.service.product.IProductService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -39,5 +42,22 @@ public class ProductRestController {
     @PostMapping("")
     public void create (@RequestBody ProductDTO productDTO) {
         productService.create(productDTO);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/detail/{id}")
+    public ProductDTO showProductDetail (@PathVariable int id) {
+        Product product = productService.findById(id);
+        ProductDTO productDTO = new ProductDTO();
+        productDTO.setProductTypeDTO(new ProductTypeDTO());
+        BeanUtils.copyProperties(product.getProductType(), productDTO.getProductTypeDTO());
+        BeanUtils.copyProperties(product, productDTO);
+        return productDTO;
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("/edit/{id}")
+    public void editProduct(@RequestBody ProductDTO productDTO, @PathVariable int id) {
+        productService.update(productDTO, id);
     }
 }

@@ -10,5 +10,5 @@ public interface IProductService {
     void create (ProductDTO productDTO);
     void delete (int id);
     Product findById(int id);
-    void update (ProductDTO productDTO);
+    void update (ProductDTO productDTO, int id);
 }
