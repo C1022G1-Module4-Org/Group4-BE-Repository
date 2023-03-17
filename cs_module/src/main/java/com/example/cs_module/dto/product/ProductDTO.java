@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.util.Arrays;
 
-public class ProductDTO {
+public class ProductDTO  {
     private Integer id;
     @NotBlank(message = "{name.notBlank}")
     @Pattern(regexp = "^[^@;,.=+\\-]+$", message = "{name.pattern}")
