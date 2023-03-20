@@ -27,7 +27,7 @@ public class CustomerRestController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("")
-    public Page<CustomerDTO> getCustomer(@PageableDefault(size = 2) Pageable pageable,
+    public Page<CustomerDTO> getCustomer(@PageableDefault(size = 10) Pageable pageable,
                                          @RequestParam(required = false, defaultValue = "") String searchCustomerName) {
         return customerService.searchCustomer(searchCustomerName, pageable);
     }

@@ -19,7 +19,7 @@ public class CustomerTypeRestController {
 
     @GetMapping("")
     @ResponseStatus(HttpStatus.OK)
-    public Page<CustomerTypeDTO> listCustomerType(@PageableDefault(size = 4) Pageable pageable,
+    public Page<CustomerTypeDTO> listCustomerType(@PageableDefault(size = 3) Pageable pageable,
                                                   @RequestParam(required = false, defaultValue = "") String name) {
         return customerTypeService.findAllCustomerType(name, pageable);
     }
