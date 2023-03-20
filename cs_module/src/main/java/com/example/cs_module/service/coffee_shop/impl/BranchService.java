@@ -3,6 +3,7 @@ package com.example.cs_module.service.coffee_shop.impl;
 import com.example.cs_module.dto.coffee_shop.BranchDTO;
 import com.example.cs_module.dto.coffee_shop.CoffeeShopDTO;
 import com.example.cs_module.model.coffee_shop.Branch;
+import com.example.cs_module.model.coffee_shop.CoffeeShop;
 import com.example.cs_module.repository.coffee_shop.IBranchRepository;
 import com.example.cs_module.repository.coffee_shop.ICoffeeShopRepository;
 import com.example.cs_module.service.coffee_shop.IBranchService;
@@ -60,7 +61,30 @@ public class BranchService implements IBranchService {
     }
 
     @Override
-    public void update(BranchDTO branchDTO) {
+    public void update(BranchDTO branchDTO, int id) {
+        Branch branch = branchRepository.findById(id).get();
+        branch.setCoffeeShop(new CoffeeShop());
+        BeanUtils.copyProperties(branchDTO.getCoffeeShopDTO(), branch.getCoffeeShop());
+        BeanUtils.copyProperties(branchDTO, branch);
+        branchRepository.save(branch);
 
     }
-}
+
+    @Override
+    public List<BranchDTO> findByName(String name) {
+        List<Branch> branchList = branchRepository.findCoffeShopName(name);
+        List<BranchDTO> productDTOList = new ArrayList<>();
+        BranchDTO branchDTO;
+        for (Branch branch : branchList) {
+            branchDTO = new BranchDTO();
+            branchDTO.setCoffeeShopDTO(new CoffeeShopDTO());
+            BeanUtils.copyProperties(branch.getCoffeeShop(), branchDTO.getCoffeeShopDTO());
+            BeanUtils.copyProperties(branch, branchDTO);
+            productDTOList.add(branchDTO);
+        }
+        return productDTOList;
+    }
+    }
+
+
+

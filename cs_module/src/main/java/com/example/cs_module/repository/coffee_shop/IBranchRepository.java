@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import java.util.List;
+
 public interface IBranchRepository extends JpaRepository<Branch,Integer> {
 //    @Query(value = "select *from branch where  email like %:email%)",nativeQuery = true)
 //    Page<Branch>getAll(Pageable pageable, @Param("email")String email);
@@ -15,4 +17,5 @@ public interface IBranchRepository extends JpaRepository<Branch,Integer> {
 //    Page<Branch> getAllByAddress(Pageable pageable,@Param("param")String address,@Param("id")long id);
 
     Page<Branch> findBranchByNameContainingAndIsDelete(Pageable pageable,String name,boolean isDelete);
+    List<Branch>findCoffeShopName(String name);
 }
