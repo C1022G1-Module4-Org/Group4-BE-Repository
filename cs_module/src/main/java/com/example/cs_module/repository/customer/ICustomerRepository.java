@@ -10,5 +10,7 @@ public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
 //    Page<Customer> searchCustomer(@Param("searchCustomerName") String searchCustomerName, @Param("searchCustomerEmail") String searchEmail, @Param("searchCustomerTypeName") String searchCustomerTypeName, Pageable pageable);
 
 //    Page<Customer> findByCustomerNameContainingAndCustomerEmailContainingAndCustomerType_CustomerTypeName(String searchCustomerName, String searchCustomerEmail, String searchCustomerTypeName, Pageable pageable);
-    Page<Customer> findByCustomerNameContaining(String searchCustomerName, Pageable pageable);
+    Page<Customer> findByCustomerNameContainingAndIsDeleteFalse(String searchCustomerName, Pageable pageable);
+
+    Customer findByCustomerId(int id);
 }

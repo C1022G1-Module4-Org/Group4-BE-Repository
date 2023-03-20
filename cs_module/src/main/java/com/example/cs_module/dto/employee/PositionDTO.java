@@ -1,18 +1,16 @@
 package com.example.cs_module.dto.employee;
 
-import com.example.cs_module.model.employee.Employee;
-
 import java.util.Set;
 
 public class PositionDTO {
     private Integer id;
     private String position;
-    private Set<Employee> employeeSet;
+    private Set<EmployeeDTO> employeeSet;
 
     public PositionDTO() {
     }
 
-    public PositionDTO(Integer id, String position, Set<Employee> employeeSet) {
+    public PositionDTO(Integer id, String position, Set<EmployeeDTO> employeeSet) {
         this.id = id;
         this.position = position;
         this.employeeSet = employeeSet;
@@ -34,11 +32,11 @@ public class PositionDTO {
         this.position = position;
     }
 
-    public Set<Employee> getEmployeeSet() {
+    public Set<EmployeeDTO> getEmployeeSet() {
         return employeeSet;
     }
 
-    public void setEmployeeSet(Set<Employee> employeeSet) {
+    public void setEmployeeSet(Set<EmployeeDTO> employeeSet) {
         this.employeeSet = employeeSet;
     }
 }

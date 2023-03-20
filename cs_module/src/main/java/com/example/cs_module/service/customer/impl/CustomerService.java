@@ -21,21 +21,15 @@ public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerRepository customerRepository;
 
-//    @Override
-//    public Page<Customer> searchCustomer1(String searchCustomerName, String searchCustomerEmail, String searchCustomerTypeName, Pageable pageable) {
-//        return customerRepository.findByCustomerNameContainingAndCustomerEmailContainingAndCustomerType_CustomerTypeName(searchCustomerName, searchCustomerEmail, searchCustomerTypeName, pageable);
-//    }
-
-
     @Override
-    public Page<CustomerDTO> searchCustomer(String customerName, Pageable pageable) {
+    public Page<CustomerDTO> searchCustomer(String searchCustomerName, Pageable pageable) {
         List<CustomerDTO> customerDTOList = new ArrayList<>();
-        Page<Customer> customerPage = customerRepository.findByCustomerNameContaining(customerName, pageable);
+        Page<Customer> customerPage = customerRepository.findByCustomerNameContainingAndIsDeleteFalse(searchCustomerName, pageable);
         CustomerDTO customerDTO;
         for (Customer customer : customerPage) {
             customerDTO = new CustomerDTO();
             customerDTO.setCustomerTypeDTO(new CustomerTypeDTO());
-//            BeanUtils.copyProperties(customer.getCustomerType(), customerDTO.getCustomerTypeDTO());
+            BeanUtils.copyProperties(customer.getCustomerType(), customerDTO.getCustomerTypeDTO());
             BeanUtils.copyProperties(customer, customerDTO);
             customerDTOList.add(customerDTO);
         }
@@ -44,22 +38,24 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public List<Customer> findAllCustomer() {
-        return customerRepository.findAll();
+        return null;
     }
 
     @Override
-    public Customer saveCustomer(Customer customer) {
-        return customerRepository.save(customer);
+    public void saveCustomer(Customer customer) {
+        customerRepository.save(customer);
     }
 
     @Override
     public Optional<Customer> findByIdCustomer(int id) {
-        return customerRepository.findById(id);
+        return Optional.empty();
     }
 
-//    @Override
-//    public void deleteCustomer(int id) {
-//        Optional<Customer> customer = customerRepository.findById(id);
-//        customer.
-//    }
+
+    @Override
+    public void deleteCustomer(int id) {
+        Customer customer = customerRepository.findByCustomerId(id);
+        customer.setDelete(true);
+        customerRepository.save(customer);
+    }
 }

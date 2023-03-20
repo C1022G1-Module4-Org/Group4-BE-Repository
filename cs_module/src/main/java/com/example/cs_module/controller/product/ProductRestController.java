@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -40,8 +41,10 @@ public class ProductRestController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    public void create (@RequestBody ProductDTO productDTO) {
-        productService.create(productDTO);
+    public void create (@RequestBody ProductDTO productDTO, @Valid BindingResult bindingResult) {
+        if (!bindingResult.hasErrors()) {
+            productService.create(productDTO);
+        }
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -57,7 +60,9 @@ public class ProductRestController {
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/edit/{id}")
-    public void editProduct(@RequestBody ProductDTO productDTO, @PathVariable int id) {
-        productService.update(productDTO, id);
+    public void editProduct(@RequestBody ProductDTO productDTO, @PathVariable int id, @Valid BindingResult bindingResult) {
+        if (!bindingResult.hasErrors()) {
+            productService.update(productDTO, id);
+        }
     }
 }

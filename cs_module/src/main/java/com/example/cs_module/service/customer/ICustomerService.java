@@ -9,15 +9,13 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ICustomerService {
-//    Page<Customer> searchCustomer1(String searchCustomerName, String searchCustomerEmail, String searchCustomerTypeName, Pageable pageable);
-
     Page<CustomerDTO> searchCustomer(String searchCustomerName, Pageable pageable);
 
     List<Customer> findAllCustomer();
 
-    Customer saveCustomer(Customer customer);
+    void saveCustomer(Customer customer);
 
     Optional<Customer> findByIdCustomer(int id);
 
-//    void deleteCustomer(int id);
+    void deleteCustomer(int id);
 }

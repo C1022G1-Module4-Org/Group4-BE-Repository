@@ -1,17 +1,17 @@
 package com.example.cs_module.service.employee.impl;
 
+import com.example.cs_module.dto.employee.CreateDTO;
 import com.example.cs_module.dto.employee.EmployeeDTO;
 import com.example.cs_module.dto.employee.PositionDTO;
 import com.example.cs_module.model.employee.Employee;
 import com.example.cs_module.repository.employee.IEmployeeRepository;
+import com.example.cs_module.repository.employee.IPositionRepository;
 import com.example.cs_module.service.employee.IEmployeeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-
-
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,6 +21,8 @@ import java.util.List;
 public class EmployeeService implements IEmployeeService {
     @Autowired
     private IEmployeeRepository employeeRepository;
+    @Autowired
+    private IPositionRepository positionRepository;
 
     @Override
     public Page<EmployeeDTO> findAllByNameContaining(Pageable pageable, String search) {
@@ -38,6 +40,19 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
+    public void create(CreateDTO createDTO) {
+        Employee employee = new Employee();
+        employee.setPosition(positionRepository.findById(createDTO.getPositionDTO().getId()).get());
+        BeanUtils.copyProperties(createDTO, employee);
+        employeeRepository.save(employee);
+    }
+
+    @Override
+    public void edit(EmployeeDTO employeeDTO) {
+
+    }
+
+    @Override
     public void delete(EmployeeDTO employeeDTO) {
         employeeRepository.deleteById(employeeDTO.getId());
     }
@@ -52,23 +67,5 @@ public class EmployeeService implements IEmployeeService {
         return employeeDTO;
     }
 
-//    @Override
-//    public void create(EmployeeDTO employeeDTO) {
-//        employeeRepository.save(employeeDTO);
-//    }
 //
-//    @Override
-//    public void edit(EmployeeDTO employeeDTO) {
-//        employeeRepository.save(employeeDTO);
-//    }
-//
-//    @Override
-//    public void delete(EmployeeDTO employeeDTO) {
-//        employeeRepository.delete(employeeDTO);
-//    }
-//
-//    @Override
-//    public EmployeeDTO findById(int id) {
-//        return null;
-//    }
 }

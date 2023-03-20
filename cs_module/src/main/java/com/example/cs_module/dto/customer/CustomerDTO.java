@@ -1,6 +1,7 @@
 package com.example.cs_module.dto.customer;
 
 public class CustomerDTO {
+    private int customerId;
     private String customerName;
     private String customerDateOfBirth;
     private String customerGender;
@@ -8,8 +9,21 @@ public class CustomerDTO {
     private String customerAddress;
     private String customerPhoneNumber;
     private CustomerTypeDTO customerTypeDTO;
+    private Boolean isDelete=false;
+
+    public Boolean getDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(Boolean delete) {
+        isDelete = delete;
+    }
 
     public CustomerDTO() {
+    }
+
+    public CustomerDTO(int customerId) {
+        this.customerId = customerId;
     }
 
     public String getCustomerName() {
@@ -62,6 +76,14 @@ public class CustomerDTO {
 
     public CustomerTypeDTO getCustomerTypeDTO() {
         return customerTypeDTO;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public void setCustomerTypeDTO(CustomerTypeDTO customerTypeDTO) {

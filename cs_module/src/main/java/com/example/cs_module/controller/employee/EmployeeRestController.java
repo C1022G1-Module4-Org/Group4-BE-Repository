@@ -1,5 +1,6 @@
 package com.example.cs_module.controller.employee;
 
+import com.example.cs_module.dto.employee.CreateDTO;
 import com.example.cs_module.dto.employee.EmployeeDTO;
 import com.example.cs_module.service.employee.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,10 @@ public class EmployeeRestController {
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable int id) {
         employeeService.delete(employeeService.findById(id));
+    }
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("")
+    public void create(@RequestBody CreateDTO createDTO){
+        employeeService.create(createDTO);
     }
 }
