@@ -9,10 +9,14 @@ import java.util.List;
 
 public interface IProductService {
     Page<ProductDTO> findALLProduct(Pageable pageable, String name);
-    void create (ProductDTO productDTO);
-    void delete (int id);
-    Product findById(int id);
-    void update (ProductDTO productDTO, int id);
 
-    List<ProductDTO> findByName (String name);
+    void create(ProductDTO productDTO);
+
+    void delete(int id);
+
+    Product findById(int id);
+
+    void update(ProductDTO productDTO, int id);
+
+    List<ProductDTO> findByName(String name);
 }
