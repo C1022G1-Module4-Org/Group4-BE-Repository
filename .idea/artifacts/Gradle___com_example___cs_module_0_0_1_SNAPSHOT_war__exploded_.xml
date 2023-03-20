@@ -1,0 +1,80 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : com.example : cs_module-0.0.1-SNAPSHOT.war (exploded)">
+    <output-path>$PROJECT_DIR$/cs_module/build/libs/exploded/cs_module-0.0.1-SNAPSHOT.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$/cs_module">
+        <buildTaskPath>:war_exploded</buildTaskPath>
+        <cleanTaskPath>:cleanWar_exploded</cleanTaskPath>
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/cs_module/build/libs/exploded/cs_module-0.0.1-SNAPSHOT.war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="cs_module.main/web/Web Gradle : cs_module-0.0.1-SNAPSHOT.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="cs_module.main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/cs_module/build/resources/main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: javax.validation:validation-api:2.0.1.Final" />
+          <element id="library" level="project" name="Gradle: jakarta.transaction:jakarta.transaction-api:1.3.3" />
+          <element id="library" level="project" name="Gradle: jakarta.persistence:jakarta.persistence-api:2.2.3" />
+          <element id="library" level="project" name="Gradle: org.hibernate:hibernate-core:5.6.15.Final" />
+          <element id="library" level="project" name="Gradle: org.thymeleaf:thymeleaf-spring5:3.0.15.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.4.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.hibernate.validator:hibernate-validator:6.2.5.Final" />
+          <element id="library" level="project" name="Gradle: org.aspectj:aspectjweaver:1.9.7" />
+          <element id="library" level="project" name="Gradle: com.zaxxer:HikariCP:4.0.3" />
+          <element id="library" level="project" name="Gradle: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final" />
+          <element id="library" level="project" name="Gradle: org.jboss.logging:jboss-logging:3.4.3.Final" />
+          <element id="library" level="project" name="Gradle: net.bytebuddy:byte-buddy:1.12.23" />
+          <element id="library" level="project" name="Gradle: antlr:antlr:2.7.7" />
+          <element id="library" level="project" name="Gradle: org.jboss:jandex:2.4.2.Final" />
+          <element id="library" level="project" name="Gradle: com.fasterxml:classmate:1.5.1" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jaxb:jaxb-runtime:2.3.8" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:5.3.26-SNAPSHOT" />
+          <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.36" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot-autoconfigure:2.7.10-SNAPSHOT" />
+          <element id="library" level="project" name="Gradle: org.springframework.boot:spring-boot:2.7.10-SNAPSHOT" />
+          <element id="library" level="project" name="Gradle: org.yaml:snakeyaml:1.30" />
+          <element id="library" level="project" name="Gradle: org.thymeleaf:thymeleaf:3.0.15.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.5" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.5" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.5" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.13.5" />
+          <element id="library" level="project" name="Gradle: jakarta.validation:jakarta.validation-api:2.0.2" />
+          <element id="library" level="project" name="Gradle: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" />
+          <element id="library" level="project" name="Gradle: org.glassfish.jaxb:txw2:2.3.8" />
+          <element id="library" level="project" name="Gradle: com.sun.istack:istack-commons-runtime:3.0.12" />
+          <element id="library" level="project" name="Gradle: ch.qos.logback:logback-classic:1.2.11" />
+          <element id="library" level="project" name="Gradle: org.apache.logging.log4j:log4j-to-slf4j:2.17.2" />
+          <element id="library" level="project" name="Gradle: org.slf4j:jul-to-slf4j:1.7.36" />
+          <element id="library" level="project" name="Gradle: org.attoparser:attoparser:2.0.5.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.unbescape:unbescape:1.1.6.RELEASE" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.13.5" />
+          <element id="library" level="project" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.13.5" />
+          <element id="library" level="project" name="Gradle: ch.qos.logback:logback-core:1.2.11" />
+          <element id="library" level="project" name="Gradle: org.apache.logging.log4j:log4j-api:2.17.2" />
+          <element id="library" level="project" name="Gradle: com.mysql:mysql-connector-j:8.0.32" />
+          <element id="library" level="project" name="Gradle: com.sun.activation:jakarta.activation:1.2.2" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-jpa/2.7.10-SNAPSHOT/714df4e35e49bedb4a907ba213615a188b6950/spring-data-jpa-2.7.10-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aspects/5.3.26-SNAPSHOT/30b7ac63085cb0dd9f8ff2e15af155b71df92b90/spring-aspects-5.3.26-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.26-SNAPSHOT/2c2bc2e210cd0db7c66806d082aa6e5c25d79d68/spring-webmvc-5.3.26-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.26-SNAPSHOT/a0a9a0e223c746404e844fd2fbfc9c6003bb2ad2/spring-web-5.3.26-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.26-SNAPSHOT/8e427d7e490b50ff8557e94d134f04a3b7b1449e/spring-context-5.3.26-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.3.26-SNAPSHOT/2f37480a514eac952d3d4ed73f379650ba4c520e/spring-aop-5.3.26-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-orm/5.3.26-SNAPSHOT/25489508e2c763bb77cba17b6f2fffc0b5ebd2e5/spring-orm-5.3.26-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/5.3.26-SNAPSHOT/c827f3ba017bff41880371eab550d3326c0d6cf4/spring-jdbc-5.3.26-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-commons/2.7.10-SNAPSHOT/30141b79526f82b89e3b3438912130a828c59f79/spring-data-commons-2.7.10-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.26-SNAPSHOT/63e491d81f3a65928cbc24d7a3c9cf6d8af890b4/spring-tx-5.3.26-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.3.26-SNAPSHOT/6757bc008f211a962d24597a699caa4af78eb4a8/spring-beans-5.3.26-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.3.26-SNAPSHOT/30ea59cab80cfced32985da00ffca2285c6053e6/spring-expression-5.3.26-SNAPSHOT.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.26-SNAPSHOT/6d62d2b5bf6707da324d240238ef6fd4c71d0c6d/spring-jcl-5.3.26-SNAPSHOT.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
