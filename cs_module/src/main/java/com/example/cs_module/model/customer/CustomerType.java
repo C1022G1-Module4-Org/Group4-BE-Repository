@@ -14,7 +14,7 @@ public class CustomerType {
     @OneToMany(mappedBy = "customerType")
     Set<Customer> customerSet;
 
-    public CustomerType() {
+    public CustomerType(int id) {
     }
 
     public int getCustomerTypeId() {
