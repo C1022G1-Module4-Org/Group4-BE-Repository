@@ -32,11 +32,11 @@ public class CustomerRestController {
         return customerService.searchCustomer(searchCustomerName, pageable);
     }
 
-//    @ResponseStatus(HttpStatus.OK)
-//    @DeleteMapping("")
-//    public void deleteCustomer(@RequestParam(required = false) Integer id){
-//        customerService.deleteCustomer(id);
-//    }
+    @ResponseStatus(HttpStatus.OK)
+    @DeleteMapping("")
+    public void deleteCustomer(@RequestParam(required = false) Integer id){
+        customerService.deleteCustomer(id);
+    }
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
