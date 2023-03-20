@@ -2,8 +2,10 @@ package com.example.cs_module.controller.customer;
 
 import com.example.cs_module.dto.customer.CustomerDTO;
 import com.example.cs_module.model.customer.Customer;
+import com.example.cs_module.model.customer.CustomerType;
 import com.example.cs_module.service.customer.ICustomerService;
 import com.example.cs_module.service.customer.ICustomerTypeService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -23,32 +25,27 @@ public class CustomerRestController {
     @Autowired
     private ICustomerTypeService customerTypeService;
 
-//    @ResponseStatus(HttpStatus.OK)
-//    @GetMapping("")
-//    public Page<CustomerDTO> getCustomer(@PageableDefault(size = 3, page = 0) Pageable pageable,
-//                                         @RequestParam(required = false, defaultValue = "") String searchCustomerName) {
-//        return customerService.searchCustomer(searchCustomerName, pageable);
-//    }
-
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("")
-    public ResponseEntity<List<Customer>> getCustomer(){
-        List<Customer> customerList = customerService.findAllCustomer();
-        if (customerList.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(customerList, HttpStatus.OK);
+    public Page<CustomerDTO> getCustomer(@PageableDefault(size = 2) Pageable pageable,
+                                         @RequestParam(required = false, defaultValue = "") String searchCustomerName) {
+        return customerService.searchCustomer(searchCustomerName, pageable);
     }
 
-//    @PostMapping("/create")
-//    public ResponseEntity<List<Customer>> addCustomer(@RequestBody Customer customer){
-//        customerService.saveCustomer(customer);
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Customer> deleteCustomer(@PathVariable int id){
+//    @ResponseStatus(HttpStatus.OK)
+//    @DeleteMapping("")
+//    public void deleteCustomer(@RequestParam(required = false) Integer id){
 //        customerService.deleteCustomer(id);
-//        return new ResponseEntity<>(HttpStatus.OK);
 //    }
+
+    @PostMapping("")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void create(@RequestBody CustomerDTO customerDTO) {
+        Customer customer = new Customer();
+        customer.setCustomerType(new CustomerType(customerDTO.getCustomerTypeDTO().getCustomerTypeId()));
+        BeanUtils.copyProperties(customerDTO.getCustomerTypeDTO(),customer.getCustomerType());
+        BeanUtils.copyProperties(customerDTO, customer);
+        customerService.saveCustomer(customer);
+    }
 }
 
