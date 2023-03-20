@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : com.example : cs_module-0.0.1-SNAPSHOT.war">
+    <output-path>$PROJECT_DIR$/cs_module/build/libs</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$/cs_module">
+        <buildTaskPath>:war</buildTaskPath>
+        <cleanTaskPath>:cleanWar</cleanTaskPath>
+      </options>
+    </properties>
+    <root id="archive" name="cs_module-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Gradle : com.example : cs_module-0.0.1-SNAPSHOT.war (exploded)" />
+    </root>
+  </artifact>
+</component>
