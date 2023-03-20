@@ -51,10 +51,11 @@ public class CustomerService implements ICustomerService {
         return Optional.empty();
     }
 
-//    @Override
-//    public void deleteCustomer(int id) {
-//        Customer customer = customerRepository.findByCustomerId(id);
-//        customer.setDelete(true);
-//        customerRepository.save(customer);
-//    }
+
+    @Override
+    public void deleteCustomer(int id) {
+        Customer customer = customerRepository.findByCustomerId(id);
+        customer.setDelete(true);
+        customerRepository.save(customer);
+    }
 }

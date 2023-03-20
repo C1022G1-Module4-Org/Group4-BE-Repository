@@ -10,16 +10,17 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("*")
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api/customer-type")
 public class CustomerTypeRestController {
     @Autowired
     private ICustomerTypeService customerTypeService;
 
-//    @ResponseStatus(HttpStatus.OK)
-//    @GetMapping("")
-//    public Page<CustomerTypeDTO> getCustomerType(@PageableDefault(size = 2) Pageable pageable){
-//       return customerTypeService.findAllCustomerType(pageable);
-//    }
+    @GetMapping("")
+    @ResponseStatus(HttpStatus.OK)
+    public Page<CustomerTypeDTO> listCustomerType(@PageableDefault(size = 4) Pageable pageable,
+                                                  @RequestParam(required = false, defaultValue = "") String name) {
+        return customerTypeService.findAllCustomerType(name, pageable);
+    }
 }

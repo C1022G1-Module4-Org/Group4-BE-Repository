@@ -78,6 +78,14 @@ public class CustomerDTO {
         return customerTypeDTO;
     }
 
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
     public void setCustomerTypeDTO(CustomerTypeDTO customerTypeDTO) {
         this.customerTypeDTO = customerTypeDTO;
     }
