@@ -1,39 +1,31 @@
-package com.example.cs_module.model.employee;
+package com.example.cs_module.dto.employee;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import java.util.Set;
 
-import javax.persistence.*;
-
-
-@Entity
-@Table(name = "employee")
-public class Employee {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class CreateDTO {
     private Integer id;
     private String name;
-    @ManyToOne
-    @JoinColumn(name = "position_id", referencedColumnName = "id")
-    @JsonManagedReference
-    private Position position;
+    private PositionDTO positionDTO;
     private String dateOfBirth;
     private boolean gender;
     private String email;
     private String address;
     private String phoneNumber;
+    private Set<EmployeeDTO> employeeSet;
 
-    public Employee() {
+    public CreateDTO() {
     }
 
-    public Employee(Integer id, String name, Position position, String dateOfBirth, boolean gender, String email, String address, String phoneNumber) {
+    public CreateDTO(Integer id, String name, PositionDTO positionDTO, String dateOfBirth, boolean gender, String email, String address, String phoneNumber, Set<EmployeeDTO> employeeSet) {
         this.id = id;
         this.name = name;
-        this.position = position;
+        this.positionDTO = positionDTO;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.employeeSet = employeeSet;
     }
 
     public Integer getId() {
@@ -52,12 +44,12 @@ public class Employee {
         this.name = name;
     }
 
-    public Position getPosition() {
-        return position;
+    public PositionDTO getPositionDTO() {
+        return positionDTO;
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
+    public void setPositionDTO(PositionDTO positionDTO) {
+        this.positionDTO = positionDTO;
     }
 
     public String getDateOfBirth() {
@@ -98,5 +90,13 @@ public class Employee {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public Set<EmployeeDTO> getEmployeeSet() {
+        return employeeSet;
+    }
+
+    public void setEmployeeSet(Set<EmployeeDTO> employeeSet) {
+        this.employeeSet = employeeSet;
     }
 }
