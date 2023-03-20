@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="34c81a55-497e-45dd-8f5f-4e60728c922d" name="Changes" comment="" />
+    <list default="true" id="34c81a55-497e-45dd-8f5f-4e60728c922d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/cs_module/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/product/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/product/IProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/product/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/product/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/product/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/product/impl/ProductService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +29,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/CODEGYM/Module 4/Group4-BE-Repository/cs_module",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -36,6 +42,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678865205536</updated>
       <workItem from="1678865206601" duration="49000" />
+      <workItem from="1679146841652" duration="58000" />
     </task>
     <servers />
   </component>
