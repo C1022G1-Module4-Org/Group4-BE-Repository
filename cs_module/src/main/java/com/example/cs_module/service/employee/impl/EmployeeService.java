@@ -4,6 +4,7 @@ import com.example.cs_module.dto.employee.CreateDTO;
 import com.example.cs_module.dto.employee.EmployeeDTO;
 import com.example.cs_module.dto.employee.PositionDTO;
 import com.example.cs_module.model.employee.Employee;
+import com.example.cs_module.model.employee.Position;
 import com.example.cs_module.repository.employee.IEmployeeRepository;
 import com.example.cs_module.repository.employee.IPositionRepository;
 import com.example.cs_module.service.employee.IEmployeeService;
@@ -48,8 +49,12 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void edit(EmployeeDTO employeeDTO) {
-
+    public void edit(CreateDTO createDTO, int id) {
+        Employee employee = employeeRepository.findById(id).get();
+        employee.setPosition(new Position());
+        BeanUtils.copyProperties(createDTO.getPositionDTO(), employee.getPosition());
+        BeanUtils.copyProperties(createDTO, employee);
+        employeeRepository.save(employee);
     }
 
     @Override
@@ -67,5 +72,8 @@ public class EmployeeService implements IEmployeeService {
         return employeeDTO;
     }
 
-//
+    @Override
+    public Employee findEmployeeById(int id) {
+        return employeeRepository.findById(id).get();
+    }
 }

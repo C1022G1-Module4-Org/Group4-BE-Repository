@@ -16,7 +16,7 @@ public class CreateDTO {
     public CreateDTO() {
     }
 
-    public CreateDTO(Integer id, String name, PositionDTO positionDTO, String dateOfBirth, boolean gender, String email, String address, String phoneNumber, Set<EmployeeDTO> employeeSet) {
+    public CreateDTO(Integer id, String name, PositionDTO positionDTO, String dateOfBirth, boolean gender, String email, String address, String phoneNumber) {
         this.id = id;
         this.name = name;
         this.positionDTO = positionDTO;
@@ -25,7 +25,6 @@ public class CreateDTO {
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
-        this.employeeSet = employeeSet;
     }
 
     public Integer getId() {
