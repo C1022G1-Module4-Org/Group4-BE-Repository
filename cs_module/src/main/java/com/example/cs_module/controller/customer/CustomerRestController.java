@@ -1,6 +1,7 @@
 package com.example.cs_module.controller.customer;
 
 import com.example.cs_module.dto.customer.CustomerDTO;
+import com.example.cs_module.dto.customer.CustomerTypeDTO;
 import com.example.cs_module.model.customer.Customer;
 import com.example.cs_module.model.customer.CustomerType;
 import com.example.cs_module.service.customer.ICustomerService;
@@ -11,10 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @CrossOrigin("*")
 @RestController
@@ -34,18 +32,40 @@ public class CustomerRestController {
 
     @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("")
-    public void deleteCustomer(@RequestParam(required = false) Integer id){
+    public void deleteCustomer(@RequestParam(required = false) Integer id) {
         customerService.deleteCustomer(id);
     }
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public void create(@RequestBody CustomerDTO customerDTO) {
+    public void createCustomer(@RequestBody CustomerDTO customerDTO) {
         Customer customer = new Customer();
         customer.setCustomerType(new CustomerType(customerDTO.getCustomerTypeDTO().getCustomerTypeId()));
         BeanUtils.copyProperties(customerDTO.getCustomerTypeDTO(),customer.getCustomerType());
         BeanUtils.copyProperties(customerDTO, customer);
         customerService.saveCustomer(customer);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/detail/{id}")
+    public CustomerDTO detailCustomer (@PathVariable int id) {
+        Customer customer = customerService.findByIdCustomer(id);
+        CustomerDTO customerDTO = new CustomerDTO();
+        customerDTO.setCustomerTypeDTO(new CustomerTypeDTO());
+        BeanUtils.copyProperties(customer.getCustomerType(), customerDTO.getCustomerTypeDTO());
+        BeanUtils.copyProperties(customer, customerDTO);
+        return customerDTO;
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("")
+    public void updateCustomer(@RequestBody CustomerDTO customerDTO) {
+        Customer customer = new Customer();
+        customer.setCustomerType(new CustomerType());
+        BeanUtils.copyProperties(customerDTO.getCustomerTypeDTO(), customer.getCustomerType());
+        BeanUtils.copyProperties(customerDTO, customer);
+
+        customerService.updateCustomer(customer);
     }
 }
 

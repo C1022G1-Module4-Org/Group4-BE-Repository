@@ -26,6 +26,14 @@ public class CustomerDTO {
         this.customerId = customerId;
     }
 
+    public CustomerTypeDTO getCustomerTypeDTO() {
+        return customerTypeDTO;
+    }
+
+    public void setCustomerTypeDTO(CustomerTypeDTO customerTypeDTO) {
+        this.customerTypeDTO = customerTypeDTO;
+    }
+
     public String getCustomerName() {
         return customerName;
     }
@@ -74,19 +82,11 @@ public class CustomerDTO {
         this.customerPhoneNumber = customerPhoneNumber;
     }
 
-    public CustomerTypeDTO getCustomerTypeDTO() {
-        return customerTypeDTO;
-    }
-
     public int getCustomerId() {
         return customerId;
     }
 
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
-    }
-
-    public void setCustomerTypeDTO(CustomerTypeDTO customerTypeDTO) {
-        this.customerTypeDTO = customerTypeDTO;
     }
 }
