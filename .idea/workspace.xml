@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34c81a55-497e-45dd-8f5f-4e60728c922d" name="Changes" comment="update">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0b96f0b5-fbeb-413b-91bf-b7f14a2e041c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0b96f0b5-fbeb-413b-91bf-b7f14a2e041c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_18_2023_11_06_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_18_2023_11_06_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_20_2023_8_14_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_20_2023_8_14_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_20_2023_8_14_AM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_20_2023_8_14_AM__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_20_2023_8_14_AM__Changes_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_20_2023_8_14_AM__Changes_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_20_2023_10_32_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_20_2023_10_32_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/controller/coffee_shop/BranchRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/controller/coffee_shop/BranchRestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/coffee_shop/IBranchRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/repository/coffee_shop/IBranchRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/IBranchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/IBranchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/impl/BranchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cs_module/src/main/java/com/example/cs_module/service/coffee_shop/impl/BranchService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,20 +61,20 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/the_cup_coffe/Group-4-FE-Repo",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "9894c8bf9c8e1004e270378152bfcd42"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/the_cup_coffe/Group-4-FE-Repo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9894c8bf9c8e1004e270378152bfcd42&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="CsModuleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="cs_module.main" />
@@ -99,6 +92,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.CsModuleApplication" />
+        <item itemvalue="Spring Boot.CsModuleApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -112,6 +106,7 @@
       <updated>1678865205536</updated>
       <workItem from="1678865206601" duration="49000" />
       <workItem from="1679293933983" duration="1903000" />
+      <workItem from="1679360740380" duration="292000" />
     </task>
     <servers />
   </component>

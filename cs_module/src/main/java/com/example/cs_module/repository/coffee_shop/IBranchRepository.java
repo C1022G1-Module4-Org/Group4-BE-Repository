@@ -17,5 +17,5 @@ public interface IBranchRepository extends JpaRepository<Branch,Integer> {
 //    Page<Branch> getAllByAddress(Pageable pageable,@Param("param")String address,@Param("id")long id);
 
     Page<Branch> findBranchByNameContainingAndIsDelete(Pageable pageable,String name,boolean isDelete);
-    List<Branch>findCoffeShopName(String name);
+    List<Branch>findByNameContaining(String name);
 }
