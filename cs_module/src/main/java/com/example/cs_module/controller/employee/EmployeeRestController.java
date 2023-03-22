@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
@@ -29,6 +30,7 @@ public class EmployeeRestController {
     private IEmployeeService employeeService;
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("")
     public Page<EmployeeDTO> listEmployee(@RequestParam(required = false, defaultValue = "") String search,
                                           @PageableDefault(size = 5) Pageable pageable) {
@@ -36,12 +38,13 @@ public class EmployeeRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable int id) {
         employeeService.delete(employeeService.findById(id));
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("")
     public ResponseEntity<?> create(@Validated @RequestBody CreateDTO createDTO, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
@@ -58,8 +61,7 @@ public class EmployeeRestController {
         }
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-
-    @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/edit/{id}")
     public ResponseEntity<?> edit(@Validated @RequestBody CreateDTO createDTO, BindingResult bindingResult, @PathVariable int id) {
         if (!bindingResult.hasErrors()) {
@@ -79,6 +81,7 @@ public class EmployeeRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/info/{id}")
     public CreateDTO showInfoEmployee(@PathVariable int id) {
         Employee employee = employeeService.findEmployeeById(id);

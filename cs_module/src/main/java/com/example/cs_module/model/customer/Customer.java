@@ -17,7 +17,6 @@ public class Customer {
     private String customerGender;
     private String customerEmail;
     private String customerAddress;
-
     private String customerPhoneNumber;
     @ManyToOne
     private CustomerType customerType;

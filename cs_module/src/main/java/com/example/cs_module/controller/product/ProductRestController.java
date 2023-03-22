@@ -13,6 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
@@ -30,6 +31,7 @@ public class ProductRestController {
     @Autowired
     private IProductService productService;
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("")
     public Page<ProductDTO> getProductList (@Valid
                                             @PageableDefault(size = 3)Pageable pageable,
@@ -40,12 +42,13 @@ public class ProductRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public void deleteProduct (@PathVariable int id) {
         productService.delete(id);
     }
 
-//    @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("")
     public ResponseEntity<?> create (@Validated @RequestBody ProductDTO productDTO, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
@@ -64,6 +67,7 @@ public class ProductRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/detail/{id}")
     public ProductDTO showProductDetail (@PathVariable int id) {
         Product product = productService.findById(id);
@@ -73,7 +77,7 @@ public class ProductRestController {
         BeanUtils.copyProperties(product, productDTO);
         return productDTO;
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/edit/{id}")
     public ResponseEntity<?> editProduct(@Validated @RequestBody ProductDTO productDTO, BindingResult bindingResult,@PathVariable int id
                                          ) {

@@ -3,27 +3,27 @@ package com.example.cs_module.dto.customer;
 import java.util.Set;
 
 public class CustomerTypeDTO {
-    private int customerTypeId;
-    private String customerTypeName;
+    private int id;
+    private String name;
     Set<CustomerDTO> customerSet;
 
     public CustomerTypeDTO() {
     }
 
-    public int getCustomerTypeId() {
-        return customerTypeId;
+    public int getId() {
+        return id;
     }
 
-    public void setCustomerTypeId(int customerTypeId) {
-        this.customerTypeId = customerTypeId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getCustomerTypeName() {
-        return customerTypeName;
+    public String getName() {
+        return name;
     }
 
-    public void setCustomerTypeName(String customerTypeName) {
-        this.customerTypeName = customerTypeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Set<CustomerDTO> getCustomerSet() {

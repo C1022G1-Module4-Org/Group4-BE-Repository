@@ -77,4 +77,5 @@ public class OrderDetail {
     public void setOrder(Order order) {
         this.order = order;
     }
+
 }

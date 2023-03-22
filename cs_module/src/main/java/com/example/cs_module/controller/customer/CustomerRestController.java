@@ -15,6 +15,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
@@ -34,6 +35,7 @@ public class CustomerRestController {
     private ICustomerTypeService customerTypeService;
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("")
     public Page<CustomerDTO> getCustomer(@PageableDefault(size = 5) Pageable pageable,
                                          @RequestParam(required = false, defaultValue = "") String searchCustomerName) {
@@ -43,17 +45,18 @@ public class CustomerRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("")
     public void deleteCustomer(@RequestParam(required = false) Integer id) {
         customerService.deleteCustomer(id);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("")
-    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<?> createCustomer(@Validated @RequestBody CustomerDTO customerDTO, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
             Customer customer = new Customer();
-            customer.setCustomerType(new CustomerType(customerDTO.getCustomerTypeDTO().getCustomerTypeId()));
+            customer.setCustomerType(new CustomerType(customerDTO.getCustomerTypeDTO().getId()));
             BeanUtils.copyProperties(customerDTO.getCustomerTypeDTO(), customer.getCustomerType());
             BeanUtils.copyProperties(customerDTO, customer);
             customerService.saveCustomer(customer);
@@ -72,6 +75,7 @@ public class CustomerRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/detail/{id}")
     public CustomerDTO detailCustomer(@PathVariable int id) {
         Customer customer = customerService.findByIdCustomer(id);
@@ -82,7 +86,7 @@ public class CustomerRestController {
         return customerDTO;
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("")
     public ResponseEntity<?> updateCustomer(@Validated @RequestBody CustomerDTO customerDTO, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {

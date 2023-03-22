@@ -9,7 +9,6 @@ public class CustomerType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-//    @Column(unique = true)
     private String name;
     @OneToMany(mappedBy = "customerType")
     private Set<Customer> customerSet;

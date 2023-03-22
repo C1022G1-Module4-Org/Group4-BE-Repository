@@ -14,6 +14,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
@@ -32,6 +33,7 @@ public class BranchRestController {
     private IBranchService branchService;
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("")
     public Page<BranchDTO> getBranchList(@Valid @PageableDefault(size = 5) Pageable pageable, @RequestParam(required = false, defaultValue = "") String name) {
         Sort sort = Sort.by("id").descending();
@@ -40,12 +42,13 @@ public class BranchRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public void deleteBranch(@PathVariable int id) {
         branchService.delete(id);
     }
 
-//    @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("")
     public ResponseEntity<?> create(@Validated @RequestBody BranchDTO branchDTO, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
@@ -64,6 +67,7 @@ public class BranchRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/detail/{id}")
     public BranchDTO showBranchDetail(@PathVariable int id){
         Branch branch = branchService.findById(id);
@@ -73,7 +77,7 @@ public class BranchRestController {
         BeanUtils.copyProperties(branch, branchDTO);
         return branchDTO;
     }
-    @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/edit/{id}")
     public ResponseEntity<?> editProduct(@Validated @RequestBody BranchDTO branchDTO, BindingResult bindingResult,
                             @PathVariable int id
