@@ -44,10 +44,8 @@ public class EmployeeRestController {
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/edit/{id}")
-    public void edit(@RequestBody CreateDTO createDTO, @PathVariable int id, @Valid BindingResult bindingResult) {
-        if (!bindingResult.hasErrors()) {
+    public void edit(@RequestBody CreateDTO createDTO, @PathVariable int id) {
             employeeService.edit(createDTO, id);
-        }
     }
 
     @ResponseStatus(HttpStatus.OK)
