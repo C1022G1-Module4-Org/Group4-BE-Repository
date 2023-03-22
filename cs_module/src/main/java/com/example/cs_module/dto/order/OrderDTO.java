@@ -8,7 +8,6 @@ import java.util.Set;
 
 public class OrderDTO {
     private Integer id;
-    private CustomerDTO customerDTO;
     private CreateDTO createDTO;
     private EmployeeDTO employeeDTO;
     private Set<OrderDetailDTO> orderDetailDTOSet;
@@ -30,14 +29,6 @@ public class OrderDTO {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public CustomerDTO getCustomerDTO() {
-        return customerDTO;
-    }
-
-    public void setCustomerDTO(CustomerDTO customerDTO) {
-        this.customerDTO = customerDTO;
     }
 
     public CreateDTO getCreateDTO() {

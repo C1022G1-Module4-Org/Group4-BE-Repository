@@ -20,4 +20,10 @@ public class OrderDetailRestController {
     private List<OrderDetailDTO> showListOrderDetail () {
         return orderDetailService.findAll();
     }
+
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("")
+    private void createOrder (@RequestBody OrderDetailDTO orderDetailDTO) {
+        orderDetailService.createOrder(orderDetailDTO);
+    }
 }

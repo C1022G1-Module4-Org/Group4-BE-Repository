@@ -15,7 +15,7 @@ public class Employee {
     private Integer id;
     private String name;
     @ManyToOne
-    @JoinColumn(name = "position_id", referencedColumnName = "id")
+    @JoinColumn(name = "position_id")
     @JsonManagedReference
     private Position position;
     private String dateOfBirth;

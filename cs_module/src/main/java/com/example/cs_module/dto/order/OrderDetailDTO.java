@@ -1,15 +1,25 @@
 package com.example.cs_module.dto.order;
 
 import com.example.cs_module.dto.coffee_shop.CoffeeShopDTO;
+import com.example.cs_module.dto.product.ProductDTO;
 
 public class OrderDetailDTO {
     private Integer id;
     private Integer quantity;
     private CoffeeShopDTO coffeeShopDTO;
+    private ProductDTO productDTO;
     private OrderDTO orderDTO;
     private Integer totalMoney;
 
     public OrderDetailDTO() {
+    }
+
+    public ProductDTO getProductDTO() {
+        return productDTO;
+    }
+
+    public void setProductDTO(ProductDTO productDTO) {
+        this.productDTO = productDTO;
     }
 
     public Integer getTotalMoney() {

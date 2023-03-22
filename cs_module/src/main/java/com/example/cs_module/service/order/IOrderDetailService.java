@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IOrderDetailService {
     List<OrderDetailDTO> findAll();
+    void createOrder (OrderDetailDTO orderDetailDTO);
+    void deleteOrder (int id);
 }

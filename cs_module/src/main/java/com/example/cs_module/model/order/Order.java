@@ -15,11 +15,11 @@ public class Order {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne
-    @JoinColumn(name = "customer_id", referencedColumnName = "customerId")
+    @JoinColumn(name = "customer_id")
     @JsonBackReference
     private Customer customer;
     @ManyToOne
-    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    @JoinColumn(name = "employee_id")
     @JsonBackReference
     private Employee employee;
     @OneToMany(mappedBy = "order")

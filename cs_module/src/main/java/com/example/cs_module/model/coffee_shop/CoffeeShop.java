@@ -15,15 +15,16 @@ public class CoffeeShop {
     @JsonBackReference
     @OneToMany(mappedBy = "coffeeShop")
     private Set<Branch>branchSet;
-    @OneToOne(mappedBy = "coffeeShop")
-    private OrderDetail orderDetail;
+    @OneToMany (mappedBy = "coffeeShop")
+    @JsonBackReference
+    private Set<OrderDetail> orderDetailSet;
 
-    public OrderDetail getOrderDetail() {
-        return orderDetail;
+    public Set<OrderDetail> getOrderDetailSet() {
+        return orderDetailSet;
     }
 
-    public void setOrderDetail(OrderDetail orderDetail) {
-        this.orderDetail = orderDetail;
+    public void setOrderDetailSet(Set<OrderDetail> orderDetailSet) {
+        this.orderDetailSet = orderDetailSet;
     }
 
     public CoffeeShop() {

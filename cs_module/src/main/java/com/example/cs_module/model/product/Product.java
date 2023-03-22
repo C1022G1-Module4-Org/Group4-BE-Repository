@@ -20,7 +20,7 @@ public class Product {
     @Column(name = "product_img_url", columnDefinition = "text")
     private String imgURL;
     @ManyToOne
-    @JoinColumn(name = "product_type_id", referencedColumnName = "id")
+    @JoinColumn(name = "product_type_id")
     @JsonBackReference
     private ProductType productType;
     @Column (name = "is_deleted")

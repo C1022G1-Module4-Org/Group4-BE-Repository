@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ICustomerTypeRepository extends JpaRepository<CustomerType, Integer> {
-    Page<CustomerType> findByCustomerTypeNameContaining( String searchCustomerTypeName,Pageable pageable);
+    Page<CustomerType> findByNameContaining( String searchCustomerTypeName,Pageable pageable);
 
-    CustomerType findByCustomerTypeId(int id);
+    CustomerType findById(int id);
 }

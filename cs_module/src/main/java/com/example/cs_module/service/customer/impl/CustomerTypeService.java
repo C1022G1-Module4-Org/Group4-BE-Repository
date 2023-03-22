@@ -22,7 +22,7 @@ public class CustomerTypeService implements ICustomerTypeService {
 
     @Override
     public Page<CustomerTypeDTO> findAllCustomerType(String searchCustomerTypeName, Pageable pageable) {
-        Page<CustomerType> customerTypePage = customerTypeRepository.findByCustomerTypeNameContaining(searchCustomerTypeName, pageable);
+        Page<CustomerType> customerTypePage = customerTypeRepository.findByNameContaining(searchCustomerTypeName, pageable);
         List<CustomerTypeDTO> customerTypeDTOList = new ArrayList<>();
         CustomerTypeDTO customerTypeDTO;
         for (CustomerType customerType : customerTypePage) {
@@ -45,7 +45,7 @@ public class CustomerTypeService implements ICustomerTypeService {
     @Override
     public CustomerTypeDTO findById(int id) {
         CustomerTypeDTO customerTypeDTO = new CustomerTypeDTO();
-        CustomerType customerType = customerTypeRepository.findByCustomerTypeId(id);
+        CustomerType customerType = customerTypeRepository.findById(id);
         Set<Customer> customerSet = customerType.getCustomerSet();
         Set<CustomerDTO> customerDTOSet = new HashSet<>();
         CustomerDTO customerDTO;

@@ -15,15 +15,15 @@ public class OrderDetail {
     private Integer quantity = 1;
     private Integer totalMoney = 0;
     @ManyToOne
-    @JoinColumn(name = "product_id", referencedColumnName = "id")
+    @JoinColumn(name = "product_id")
     @JsonBackReference
     private Product product;
-    @OneToOne
-    @JoinColumn(name = "coffee_shop_id", referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn (name = "coffee_shop_id")
     @JsonBackReference
     private CoffeeShop coffeeShop;
     @ManyToOne
-    @JoinColumn(name = "order_id", referencedColumnName = "id")
+    @JoinColumn(name = "order_id")
     @JsonBackReference
     private Order order;
 

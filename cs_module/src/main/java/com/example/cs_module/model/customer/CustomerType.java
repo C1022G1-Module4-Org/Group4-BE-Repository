@@ -8,34 +8,33 @@ import java.util.Set;
 public class CustomerType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int customerTypeId;
-    @Column(unique = true)
-    private String customerTypeName;
+    private int id;
+//    @Column(unique = true)
+    private String name;
     @OneToMany(mappedBy = "customerType")
-    Set<Customer> customerSet;
-
-    public CustomerType(int customerTypeId) {
-        this.customerTypeId = customerTypeId;
-    }
+    private Set<Customer> customerSet;
 
     public CustomerType() {
-
     }
 
-    public int getCustomerTypeId() {
-        return customerTypeId;
+    public CustomerType(int id) {
+        this.id = id;
     }
 
-    public void setCustomerTypeId(int customerTypeId) {
-        this.customerTypeId = customerTypeId;
+    public int getId() {
+        return id;
     }
 
-    public String getCustomerTypeName() {
-        return customerTypeName;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setCustomerTypeName(String customerTypeName) {
-        this.customerTypeName = customerTypeName;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Set<Customer> getCustomerSet() {

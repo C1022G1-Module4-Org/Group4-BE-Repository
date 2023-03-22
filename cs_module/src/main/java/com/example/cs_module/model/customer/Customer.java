@@ -15,13 +15,11 @@ public class Customer {
     private String customerName;
     private String customerDateOfBirth;
     private String customerGender;
-    @Column(unique = true)
     private String customerEmail;
     private String customerAddress;
-    @Column(unique = true)
+
     private String customerPhoneNumber;
     @ManyToOne
-    @JoinColumn(name = "customer_type_id", referencedColumnName = "customerTypeId")
     private CustomerType customerType;
     private Boolean isDelete=false;
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
