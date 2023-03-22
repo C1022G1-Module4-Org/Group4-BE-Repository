@@ -1,17 +1,15 @@
 package com.example.cs_module.dto.product;
 
-import com.example.cs_module.model.product.ProductType;
-
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import java.util.Arrays;
 
-public class ProductDTO  {
+public class ProductDTO {
     private Integer id;
     @NotBlank(message = "{name.notBlank}")
     @Pattern(regexp = "^[^@;,.=+\\-]+$", message = "{name.pattern}")
     private String name;
-    @NotBlank(message = "{price.notBlank}")
+    @Min(value = 0, message = "Giá bán phải lớn hơn 0")
     private Double price;
     @NotBlank(message = "{imgURL.notBlank}")
     private String imgURL;

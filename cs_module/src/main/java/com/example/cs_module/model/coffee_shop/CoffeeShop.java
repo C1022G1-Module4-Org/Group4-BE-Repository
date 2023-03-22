@@ -1,5 +1,6 @@
 package com.example.cs_module.model.coffee_shop;
 
+import com.example.cs_module.model.order.OrderDetail;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
@@ -14,6 +15,16 @@ public class CoffeeShop {
     @JsonBackReference
     @OneToMany(mappedBy = "coffeeShop")
     private Set<Branch>branchSet;
+    @OneToOne(mappedBy = "coffeeShop")
+    private OrderDetail orderDetail;
+
+    public OrderDetail getOrderDetail() {
+        return orderDetail;
+    }
+
+    public void setOrderDetail(OrderDetail orderDetail) {
+        this.orderDetail = orderDetail;
+    }
 
     public CoffeeShop() {
     }

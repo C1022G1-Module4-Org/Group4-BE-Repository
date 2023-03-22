@@ -23,7 +23,8 @@ public class CustomerService implements ICustomerService {
     @Override
     public Page<CustomerDTO> searchCustomer(String searchCustomerName, Pageable pageable) {
         List<CustomerDTO> customerDTOList = new ArrayList<>();
-        Page<Customer> customerPage = customerRepository.findByCustomerNameContainingAndIsDeleteFalse(searchCustomerName, pageable);
+        Page<Customer> customerPage = customerRepository
+                .findByCustomerNameContainingAndIsDelete(searchCustomerName, pageable, false);
         CustomerDTO customerDTO;
         for (Customer customer : customerPage) {
             customerDTO = new CustomerDTO();
@@ -32,7 +33,7 @@ public class CustomerService implements ICustomerService {
             BeanUtils.copyProperties(customer, customerDTO);
             customerDTOList.add(customerDTO);
         }
-        return new PageImpl<>(customerDTOList);
+        return new PageImpl<>(customerDTOList, pageable, customerPage.getTotalElements());
     }
 
     @Override

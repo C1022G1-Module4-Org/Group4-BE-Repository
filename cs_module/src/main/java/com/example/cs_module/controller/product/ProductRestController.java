@@ -12,10 +12,16 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/product")
@@ -39,12 +45,22 @@ public class ProductRestController {
         productService.delete(id);
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
+//    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    public void create (@RequestBody ProductDTO productDTO, @Valid BindingResult bindingResult) {
+    public ResponseEntity<?> create (@Validated @RequestBody ProductDTO productDTO, BindingResult bindingResult) {
         if (!bindingResult.hasErrors()) {
             productService.create(productDTO);
+        } else {
+            Map<String, String> map = new LinkedHashMap<>();
+            List<FieldError> errors = bindingResult.getFieldErrors();
+            for (FieldError error : errors) {
+                if (!map.containsKey(error.getField())) {
+                    map.put(error.getField(), error.getDefaultMessage());
+                }
+            }
+            return new ResponseEntity<>(map,  HttpStatus.BAD_REQUEST);
         }
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -58,11 +74,21 @@ public class ProductRestController {
         return productDTO;
     }
 
-    @ResponseStatus(HttpStatus.OK)
     @PutMapping("/edit/{id}")
-    public void editProduct(@RequestBody ProductDTO productDTO, @PathVariable int id, @Valid BindingResult bindingResult) {
+    public ResponseEntity<?> editProduct(@Validated @RequestBody ProductDTO productDTO, BindingResult bindingResult,@PathVariable int id
+                                         ) {
         if (!bindingResult.hasErrors()) {
             productService.update(productDTO, id);
+        } else {
+            Map<String, String> map = new LinkedHashMap<>();
+            List<FieldError> errors = bindingResult.getFieldErrors();
+            for (FieldError error : errors) {
+                if (!map.containsKey(error.getField())) {
+                    map.put(error.getField(), error.getDefaultMessage());
+                }
+            }
+            return new ResponseEntity<>(map,  HttpStatus.BAD_REQUEST);
         }
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

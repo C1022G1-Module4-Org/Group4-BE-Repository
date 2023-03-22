@@ -1,8 +1,11 @@
 package com.example.cs_module.model.product;
 
+import com.example.cs_module.model.order.OrderDetail;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table (name = "product")
@@ -22,6 +25,17 @@ public class Product {
     private ProductType productType;
     @Column (name = "is_deleted")
     private boolean isDeleted = false;
+    @OneToMany(mappedBy = "product")
+    @JsonManagedReference
+    private Set<OrderDetail> orderDetailSet;
+
+    public Set<OrderDetail> getOrderDetailSet() {
+        return orderDetailSet;
+    }
+
+    public void setOrderDetailSet(Set<OrderDetail> orderDetailSet) {
+        this.orderDetailSet = orderDetailSet;
+    }
 
     public Product() {
     }

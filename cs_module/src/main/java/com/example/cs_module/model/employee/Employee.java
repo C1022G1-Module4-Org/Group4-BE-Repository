@@ -1,8 +1,10 @@
 package com.example.cs_module.model.employee;
 
+import com.example.cs_module.model.order.Order;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -21,6 +23,17 @@ public class Employee {
     private String email;
     private String address;
     private String phoneNumber;
+    @OneToMany(mappedBy = "employee")
+    @JsonManagedReference
+    private Set<Order> orderSet;
+
+    public Set<Order> getOrderSet() {
+        return orderSet;
+    }
+
+    public void setOrderSet(Set<Order> orderSet) {
+        this.orderSet = orderSet;
+    }
 
     public Employee() {
     }

@@ -9,10 +9,20 @@ import com.example.cs_module.service.customer.ICustomerTypeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 @CrossOrigin("*")
 @RestController
@@ -25,9 +35,11 @@ public class CustomerRestController {
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("")
-    public Page<CustomerDTO> getCustomer(@PageableDefault(size = 10) Pageable pageable,
+    public Page<CustomerDTO> getCustomer(@PageableDefault(size = 5) Pageable pageable,
                                          @RequestParam(required = false, defaultValue = "") String searchCustomerName) {
-        return customerService.searchCustomer(searchCustomerName, pageable);
+        Sort sort = Sort.by("customerId").descending();
+        Pageable sortedPageaBle = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize(), sort);
+        return customerService.searchCustomer(searchCustomerName, sortedPageaBle);
     }
 
     @ResponseStatus(HttpStatus.OK)
@@ -38,17 +50,30 @@ public class CustomerRestController {
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
-    public void createCustomer(@RequestBody CustomerDTO customerDTO) {
-        Customer customer = new Customer();
-        customer.setCustomerType(new CustomerType(customerDTO.getCustomerTypeDTO().getCustomerTypeId()));
-        BeanUtils.copyProperties(customerDTO.getCustomerTypeDTO(),customer.getCustomerType());
-        BeanUtils.copyProperties(customerDTO, customer);
-        customerService.saveCustomer(customer);
+    public ResponseEntity<?> createCustomer(@Validated @RequestBody CustomerDTO customerDTO, BindingResult bindingResult) {
+        if (!bindingResult.hasErrors()) {
+            Customer customer = new Customer();
+            customer.setCustomerType(new CustomerType(customerDTO.getCustomerTypeDTO().getCustomerTypeId()));
+            BeanUtils.copyProperties(customerDTO.getCustomerTypeDTO(), customer.getCustomerType());
+            BeanUtils.copyProperties(customerDTO, customer);
+            customerService.saveCustomer(customer);
+        } else {
+            Map<String, String> map = new LinkedHashMap<>();
+            List<FieldError> errors = bindingResult.getFieldErrors();
+            for (FieldError error : errors) {
+                if (!map.containsKey(error.getField())) {
+                    map.put(error.getField(), error.getDefaultMessage());
+                }
+            }
+            return new ResponseEntity<>(map, HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(HttpStatus.CREATED);
+
     }
 
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/detail/{id}")
-    public CustomerDTO detailCustomer (@PathVariable int id) {
+    public CustomerDTO detailCustomer(@PathVariable int id) {
         Customer customer = customerService.findByIdCustomer(id);
         CustomerDTO customerDTO = new CustomerDTO();
         customerDTO.setCustomerTypeDTO(new CustomerTypeDTO());
@@ -59,13 +84,26 @@ public class CustomerRestController {
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("")
-    public void updateCustomer(@RequestBody CustomerDTO customerDTO) {
-        Customer customer = new Customer();
-        customer.setCustomerType(new CustomerType());
-        BeanUtils.copyProperties(customerDTO.getCustomerTypeDTO(), customer.getCustomerType());
-        BeanUtils.copyProperties(customerDTO, customer);
+    public ResponseEntity<?> updateCustomer(@Validated @RequestBody CustomerDTO customerDTO, BindingResult bindingResult) {
+        if (!bindingResult.hasErrors()) {
+            Customer customer = new Customer();
+            customer.setCustomerType(new CustomerType());
+            BeanUtils.copyProperties(customerDTO.getCustomerTypeDTO(), customer.getCustomerType());
+            BeanUtils.copyProperties(customerDTO, customer);
 
-        customerService.updateCustomer(customer);
+            customerService.updateCustomer(customer);
+        } else {
+            Map<String, String> map = new LinkedHashMap<>();
+            List<FieldError> errors = bindingResult.getFieldErrors();
+            for (FieldError error : errors) {
+                if (!map.containsKey(error.getField())) {
+                    map.put(error.getField(), error.getDefaultMessage());
+                }
+            }
+            return new ResponseEntity<>(map, HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(HttpStatus.OK);
+
     }
 }
 

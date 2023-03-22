@@ -6,9 +6,10 @@ import javax.validation.constraints.Pattern;
 public class BranchDTO {
     private Integer id;
     @NotBlank(message = "không được để trống")
+    @Pattern(regexp = "^[^@;,.=+\\-]+$", message = "Không được chứa ký tự đặc biệt")
     private String name;
     @NotBlank(message = "không được để trống")
-    @Pattern(regexp = "^[\\w.]+@[\\w&&[^_]]+([.][\\w&&[^_]]+){1,2}$")
+    @Pattern(regexp = "^[\\w.]+@[\\w&&[^_]]+([.][\\w&&[^_]]+){1,2}$", message = "Phải theo format abc@gmail.com")
     private String email;
     @NotBlank (message = "không được để trống phải điền số đt vào")
     @Pattern(regexp = "^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[\\d]{7}$", message = "Bạn phải nhập đúng số điện thoại miền Việt Nam")

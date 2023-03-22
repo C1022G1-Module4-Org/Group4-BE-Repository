@@ -72,7 +72,7 @@ public class ProductService implements IProductService {
 
     @Override
     public List<ProductDTO> findByName(String name) {
-        List<Product> productList = productRepository.findByProductTypeName(name);
+        List<Product> productList = productRepository.findByProductTypeNameAndIsDeleted(name, false);
         List<ProductDTO> productDTOList = new ArrayList<>();
         ProductDTO productDTO;
         for (Product product : productList) {

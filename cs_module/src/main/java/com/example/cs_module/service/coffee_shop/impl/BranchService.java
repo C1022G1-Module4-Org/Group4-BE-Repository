@@ -72,7 +72,7 @@ public class BranchService implements IBranchService {
 
     @Override
     public List<BranchDTO> findByName(String name) {
-        List<Branch> branchList = branchRepository.findCoffeShopName(name);
+        List<Branch> branchList = branchRepository.findByNameContaining(name);
         List<BranchDTO> productDTOList = new ArrayList<>();
         BranchDTO branchDTO;
         for (Branch branch : branchList) {
