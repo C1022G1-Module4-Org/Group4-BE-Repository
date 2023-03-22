@@ -1,15 +1,25 @@
 package com.example.cs_module.dto.employee;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.Set;
 
 public class CreateDTO {
     private Integer id;
+    @NotBlank(message = "{name.notBlank}")
+    @Pattern(regexp = "^[A-Z][a-z]+(\\s[A-Z][a-z]+)*$", message = "{name.pattern}")
     private String name;
     private PositionDTO positionDTO;
     private String dateOfBirth;
     private boolean gender;
+    @NotBlank(message = "{name.notBlank}")
+    @Email(message = "Định dạng email sai")
     private String email;
+    @NotBlank(message = "{name.notBlank}")
     private String address;
+    @NotBlank(message = "{name.notBlank}")
+    @Pattern(regexp = "^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[\\d]{7}$", message = "Số điện thoại phải theo dạng 090xxxxxxx hoặc 091xxxxxxx hoặc (84)+90xxxxxxx hoặc (84)+91xxxxxxx")
     private String phoneNumber;
     private Set<EmployeeDTO> employeeSet;
 
