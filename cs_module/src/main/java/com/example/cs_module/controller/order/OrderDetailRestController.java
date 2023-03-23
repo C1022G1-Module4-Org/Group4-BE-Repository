@@ -26,4 +26,10 @@ public class OrderDetailRestController {
     private void createOrder (@RequestBody OrderDetailDTO orderDetailDTO) {
         orderDetailService.createOrder(orderDetailDTO);
     }
+
+    @ResponseStatus(HttpStatus.OK)
+    @DeleteMapping("{id}")
+    private void deleteOrder (@PathVariable int id) {
+        orderDetailService.deleteOrder(id);
+    }
 }

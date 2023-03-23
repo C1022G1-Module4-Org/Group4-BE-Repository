@@ -1,11 +1,20 @@
 package com.example.cs_module.dto;
 
 public class RegisterDTO {
+    private String name;
     private String username;
     private String email;
     private String password;
 
     public RegisterDTO() {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUsername() {
