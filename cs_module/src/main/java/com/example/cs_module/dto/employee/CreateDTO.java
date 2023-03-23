@@ -8,13 +8,13 @@ import java.util.Set;
 public class CreateDTO {
     private Integer id;
     @NotBlank(message = "{name.notBlank}")
-    @Pattern(regexp = "^[A-Z][a-z]+(\\s[A-Z][a-z]+)*$", message = "{name.pattern}")
+    @Pattern(regexp = "^[^@;,.=+\\-]+$", message = "{name.pattern}")
     private String name;
     private PositionDTO positionDTO;
     private String dateOfBirth;
     private boolean gender;
     @NotBlank(message = "{name.notBlank}")
-    @Email(message = "Định dạng email sai")
+    @Email(message = "Định dạng email sai. Phải theo dạng abc123@gmail.com")
     private String email;
     @NotBlank(message = "{name.notBlank}")
     private String address;

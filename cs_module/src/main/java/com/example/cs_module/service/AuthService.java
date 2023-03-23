@@ -52,12 +52,12 @@ public class AuthService implements IAuthService{
 
         // add check for username exists in database
         if(userRepository.existsByUsername(registerDto.getUsername())){
-            throw new UserAPIException(HttpStatus.BAD_REQUEST, "Ten dang nhap da ton tai!.");
+            throw new UserAPIException(HttpStatus.BAD_REQUEST, "Tên đăng nhập đã tồn tại!.");
         }
 
         // add check for email exists in database
         if(userRepository.existsByEmail(registerDto.getEmail())){
-            throw new UserAPIException(HttpStatus.BAD_REQUEST, "Email da ton tai!.");
+            throw new UserAPIException(HttpStatus.BAD_REQUEST, "Email đã tồn tại!.");
         }
 
         User user = new User();

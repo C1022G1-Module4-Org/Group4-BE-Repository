@@ -32,4 +32,10 @@ public class OrderDetailRestController {
     private void deleteOrder (@PathVariable int id) {
         orderDetailService.deleteOrder(id);
     }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("/edit")
+    private void editOrder (@RequestBody OrderDetailDTO orderDetailDTO) {
+        orderDetailService.updateOrder(orderDetailDTO);
+    }
 }

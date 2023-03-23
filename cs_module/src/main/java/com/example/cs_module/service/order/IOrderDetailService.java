@@ -8,4 +8,5 @@ public interface IOrderDetailService {
     List<OrderDetailDTO> findAll();
     void createOrder (OrderDetailDTO orderDetailDTO);
     void deleteOrder (int id);
+    void updateOrder (OrderDetailDTO orderDetailDTO);
 }

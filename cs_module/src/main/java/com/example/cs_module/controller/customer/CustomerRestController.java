@@ -54,6 +54,14 @@ public class CustomerRestController {
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("")
     public ResponseEntity<?> createCustomer(@Validated @RequestBody CustomerDTO customerDTO, BindingResult bindingResult) {
+        for (Customer customer : customerService.findAllCustomer()) {
+            if (customer.getCustomerEmail().equals(customerDTO.getCustomerEmail())) {
+                bindingResult.rejectValue("customerEmail", "xxx", "Email đã tồn tại!!!");
+            }
+            if (customer.getCustomerPhoneNumber().equals(customerDTO.getCustomerPhoneNumber())){
+                bindingResult.rejectValue("customerPhoneNumber", "xxx", "Số điện thoại đã tồn tại!!!");
+            }
+        }
         if (!bindingResult.hasErrors()) {
             Customer customer = new Customer();
             customer.setCustomerType(new CustomerType(customerDTO.getCustomerTypeDTO().getId()));
@@ -75,7 +83,6 @@ public class CustomerRestController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/detail/{id}")
     public CustomerDTO detailCustomer(@PathVariable int id) {
         Customer customer = customerService.findByIdCustomer(id);

@@ -7,7 +7,7 @@ import javax.validation.constraints.Pattern;
 public class CustomerDTO {
     private int customerId;
     @NotBlank(message = "{name.notBlank}")
-    @Pattern(regexp = "^[A-Z][a-z]+(\\s[A-Z][a-z]+)*$", message = "{name.pattern}")
+    @Pattern(regexp = "^[^@;,.=+\\-]+$", message = "{name.pattern}")
     private String customerName;
     private String customerDateOfBirth;
     private String customerGender;
@@ -17,7 +17,6 @@ public class CustomerDTO {
     @NotBlank(message = "{name.notBlank}")
     private String customerAddress;
     @NotBlank(message = "{name.notBlank}")
-    @Pattern(regexp = "^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[\\d]{7}$", message = "Số điện thoại phải theo dạng 090xxxxxxx hoặc 091xxxxxxx hoặc (84)+90xxxxxxx hoặc (84)+91xxxxxxx")
     private String customerPhoneNumber;
     private CustomerTypeDTO customerTypeDTO;
     private Boolean isDelete = false;

@@ -4,7 +4,9 @@ import com.example.cs_module.dto.coffee_shop.CoffeeShopDTO;
 import com.example.cs_module.dto.order.OrderDTO;
 import com.example.cs_module.dto.order.OrderDetailDTO;
 import com.example.cs_module.dto.product.ProductDTO;
+import com.example.cs_module.dto.product.ProductTypeDTO;
 import com.example.cs_module.model.coffee_shop.CoffeeShop;
+import com.example.cs_module.model.order.Order;
 import com.example.cs_module.model.order.OrderDetail;
 import com.example.cs_module.model.product.Product;
 import com.example.cs_module.repository.coffee_shop.ICoffeeShopRepository;
@@ -39,9 +41,12 @@ public class OrderDetailService implements IOrderDetailService {
             orderDetailDTO.setOrderDTO(new OrderDTO());
             orderDetailDTO.setCoffeeShopDTO(new CoffeeShopDTO());
             orderDetailDTO.setProductDTO(new ProductDTO());
+//            orderDetailDTO.getProductDTO().setProductTypeDTO(new ProductTypeDTO());
             BeanUtils.copyProperties(orderDetail.getOrder(), orderDetailDTO.getOrderDTO());
             BeanUtils.copyProperties(orderDetail.getCoffeeShop(), orderDetailDTO.getCoffeeShopDTO());
             BeanUtils.copyProperties(orderDetail.getProduct(), orderDetailDTO.getProductDTO());
+//            BeanUtils.copyProperties(orderDetail.getProduct().getProductType()
+//                    , orderDetailDTO.getProductDTO().getProductTypeDTO());
             BeanUtils.copyProperties(orderDetail, orderDetailDTO);
             orderDetailDTOList.add(orderDetailDTO);
         }
@@ -66,5 +71,18 @@ public class OrderDetailService implements IOrderDetailService {
     @Override
     public void deleteOrder(int id) {
         orderDetailRepository.delete(orderDetailRepository.findById(id).get());
+    }
+
+    @Override
+    public void updateOrder(OrderDetailDTO orderDetailDTO) {
+        OrderDetail orderDetail = orderDetailRepository.findById(orderDetailDTO.getId()).get();
+//        orderDetail.setOrder(new Order());
+//        orderDetail.setProduct(new Product());
+//        orderDetail.setCoffeeShop(new CoffeeShop());
+//        BeanUtils.copyProperties(orderDetailDTO.getProductDTO(), orderDetail.getProduct());
+//        BeanUtils.copyProperties(orderDetailDTO.getOrderDTO(), orderDetail.getOrder());
+//        BeanUtils.copyProperties(orderDetailDTO.getCoffeeShopDTO(), orderDetail.getCoffeeShop());
+        BeanUtils.copyProperties(orderDetailDTO, orderDetail);
+        orderDetailRepository.save(orderDetail);
     }
 }
