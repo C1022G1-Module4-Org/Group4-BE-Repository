@@ -76,12 +76,6 @@ public class OrderDetailService implements IOrderDetailService {
     @Override
     public void updateOrder(OrderDetailDTO orderDetailDTO) {
         OrderDetail orderDetail = orderDetailRepository.findById(orderDetailDTO.getId()).get();
-//        orderDetail.setOrder(new Order());
-//        orderDetail.setProduct(new Product());
-//        orderDetail.setCoffeeShop(new CoffeeShop());
-//        BeanUtils.copyProperties(orderDetailDTO.getProductDTO(), orderDetail.getProduct());
-//        BeanUtils.copyProperties(orderDetailDTO.getOrderDTO(), orderDetail.getOrder());
-//        BeanUtils.copyProperties(orderDetailDTO.getCoffeeShopDTO(), orderDetail.getCoffeeShop());
         BeanUtils.copyProperties(orderDetailDTO, orderDetail);
         orderDetailRepository.save(orderDetail);
     }
